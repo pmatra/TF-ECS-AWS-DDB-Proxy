@@ -210,8 +210,8 @@ module "alb" {
   # Security Group
   security_group_ingress_rules = {
     all_http = {
-      from_port   = 80
-      to_port     = 80
+      from_port   = 3000
+      to_port     = 3000
       ip_protocol = "tcp"
       cidr_ipv4   = "0.0.0.0/0"
     }
@@ -225,7 +225,7 @@ module "alb" {
 
   listeners = {
     ex_http = {
-      port     = 80
+      port     = 3000
       protocol = "HTTP"
 
       forward = {
